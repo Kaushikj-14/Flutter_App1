@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
 }
 
 
+
 class ScrollableItems extends StatelessWidget {
 
 
@@ -37,7 +38,6 @@ class ScrollableItems extends StatelessWidget {
             child:AppBar(
               elevation: 0,
               title: ListView(
-
                 shrinkWrap: true,
                 children: [
                   Padding(
@@ -49,7 +49,6 @@ class ScrollableItems extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30.0),
                             borderSide: BorderSide(width: 0.8),
 
-
                           ),
                         filled:true,
                         fillColor: Colors.white,
@@ -58,14 +57,11 @@ class ScrollableItems extends StatelessWidget {
                             Icons.search ,
                             size:21.0),
 
-
                       ),
-
 
                     ),
 
                   ),
-
 
                 ],
 
@@ -87,13 +83,11 @@ class ScrollableItems extends StatelessWidget {
           ),
               ),
 
+            ),
 
             ),
 
 
-
-
-            ),
 
 
            body:ListView.builder(
@@ -144,7 +138,7 @@ class ScrollableItems extends StatelessWidget {
 
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.home),
+                                    icon: Icon(Icons.electric_bolt),
                                     alignment: Alignment.topRight,
                                     onPressed: () {
                                       print("Icon Button clicked");
