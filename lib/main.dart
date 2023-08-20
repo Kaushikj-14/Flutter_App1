@@ -21,159 +21,160 @@ class ScrollableItems extends StatelessWidget {
   // );
 
   int _selectedIndex = 0;
-  final List<String> products = ['Id123','Id234','Id345','Id456','Id567'];
-  int index=0;
+  int index=-1;
   final List<String> entries = <String>['ID ENO-TEST-GRIDSCAPE01', 'ID: MultiTest', 'ID: Delta'];
-  final List<int> colorCodes = <int>[600, 500, 100];
   final List<String> subtitle = ['30 Bahgat Colony Near Susen Circle'];
+  bool selected = false;
+
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-        
-        appBar: AppBar(
-        title: Text('Scrollable Items'),
-      ),
 
 
 
-         body:ListView.builder(
-          padding: const EdgeInsets.all(8),
-          itemCount: entries.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              padding: const EdgeInsets.all(8),
-              height: 200,
-              color: Colors.white,
 
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(children: [
+    return GestureDetector(
 
+     child: Container(
 
+      child: Scaffold(
 
-                      ListTile(
-                        title:Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [Text('${entries[index]}')],
-                              ),
-                              Column(
+          appBar: AppBar(
+          title: Text('Scrollable Items'),
+        ),
 
-                                children: [Text('Bhagat Colony',)],
-                              )
-                            ]),
-                        
-                        subtitle: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children:[
-                              Column(
-                                children: [Text(subtitle[0])],
-                              ),
-                              Row(children: [
-                                Icon(Icons.location_on),
-                                Text('8157 Miles')
-                              ],)
-                            ] ),
+           body:ListView.builder(
+            padding: const EdgeInsets.all(8),
+            itemCount: entries.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                padding: const EdgeInsets.all(8),
+                height: 200,
+                color: Colors.white,
 
-                      ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
-                      ListTile(
+                      Column(children: [
+                        ListTile(
                           title:Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                               children: [
-                                IconButton(
-                                  icon: Icon(Icons.home),
-                                  alignment: Alignment.topRight,
-                                  onPressed: () {
-                                    print("Icon Button clicked");
-                                  },
+                                Column(
+                                  children: [Text('${entries[index]}')],
                                 ),
                                 Column(
+
+                                  children: [Text('Bhagat Colony',)],
+                                )
+                              ]),
+
+                          subtitle: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children:[
+                                Column(
+                                  children: [Text(subtitle[0])],
+                                ),
+                                Row(children: [
+                                  Icon(Icons.location_on),
+                                  Text('8157 Miles')
+                                ],)
+                              ] ),
+                        ),
+
+                        ListTile(
+                            title:Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                children: [
+                                  IconButton(
+                                    icon: Icon(Icons.home),
+                                    alignment: Alignment.topRight,
+                                    onPressed: () {
+                                      print("Icon Button clicked");
+                                    },
+                                  ),
+                                  Column(
+                                    children: [
+
+                                      MaterialButton(
+                                        shape: const CircleBorder(),
+                                        color: Colors.grey,
+                                        padding: const EdgeInsets.all(10),
+                                        onPressed: () {},
+                                        child: const Icon(
+                                          Icons.star,
+                                          size: 20,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ]
+                            ),
+
+                            // subtitle: Column(children: [Text('AC Type2'),Text('Unknown'),],crossAxisAlignment: CrossAxisAlignment.start,),
+                            subtitle: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [Text('AC Type2'),Text('Unknown'),],
+                                ),
+
+                                Column(
                                   children: [
-                                    // IconButton(onPressed: (){}, icon: Icon(Icons.star_border))
                                     MaterialButton(
                                       shape: const CircleBorder(),
-                                      color: Colors.red,
+                                      color: Colors.green,
                                       padding: const EdgeInsets.all(10),
                                       onPressed: () {},
                                       child: const Icon(
-                                        Icons.star,
-                                        size: 20,
-                                        color: Colors.yellow,
+                                        Icons.near_me_sharp,
+                                        size: 22,
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ],
+
+
                                 )
-                              ]
-                          ),
+                              ],
 
-                          // subtitle: Column(children: [Text('AC Type2'),Text('Unknown'),],crossAxisAlignment: CrossAxisAlignment.start,),
-                          subtitle: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [Text('AC Type2'),Text('Unknown'),],
-                              ),
-
-                              Column(
-                                children: [
-                                  MaterialButton(
-                                    shape: const CircleBorder(),
-                                    color: Colors.green,
-                                    padding: const EdgeInsets.all(10),
-                                    onPressed: () {},
-                                    child: const Icon(
-                                      Icons.near_me_sharp,
-                                      size: 22,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-
-                              )
-                            ],
-                          ),
-                      ) ,
-
-
-
-                    ],
-
-                    ),
-
-                ],
-
+                            ),
+                        ) ,
+                      Divider(
+                        color: Colors.black,
+                        indent: 25.0,
+                        endIndent: 25.0,
+                      )
+                      ],
+                      ),
+                  ],
+                  ),
                 ),
+              );
+            }
+        ),
 
+      bottomNavigationBar: BottomNavigationBar(
+      currentIndex: _selectedIndex,
+      // onTap: _navigateBottomBar,
+      type: BottomNavigationBarType.fixed,
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.location_on) ,label: 'Map'),
+        BottomNavigationBarItem(icon: Icon(Icons.star_border),label: 'Favorite'),
+        BottomNavigationBarItem(icon: Icon(Icons.payment),label: 'Message'),
+        BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'More'),
 
-              ),
+      ],),
 
-
-            );
-
-          }
       ),
-
-    bottomNavigationBar: BottomNavigationBar(
-    currentIndex: _selectedIndex,
-    // onTap: _navigateBottomBar,
-    type: BottomNavigationBarType.fixed,
-    items: [
-      BottomNavigationBarItem(icon: Icon(Icons.location_on) ,label: 'Map'),
-      BottomNavigationBarItem(icon: Icon(Icons.star_border),label: 'Favorite'),
-      BottomNavigationBarItem(icon: Icon(Icons.payment),label: 'Message'),
-      BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'More'),
-
-    ],),
-
+    ),
     );
   }
 }
